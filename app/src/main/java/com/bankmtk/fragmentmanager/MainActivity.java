@@ -74,4 +74,21 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
     }
+    class ListenerOnReplace implements View.OnClickListener{
+        Fragment fragment;
+        ListenerOnReplace(Fragment fragment){
+            this.fragment = fragment;
+        }
+
+        @Override
+        public void onClick(View v) {
+            replaceFragment();
+        }
+        private void replaceFragment(){
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+    }
 }
