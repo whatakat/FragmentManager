@@ -2,6 +2,7 @@ package com.bankmtk.fragmentmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
@@ -39,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         replace2.setOnClickListener(new ListenerOnReplace(fragment2));
         Button replace3 = (Button)findViewById(R.id.replace3);
         replace3.setOnClickListener(new ListenerOnReplace(fragment3));
+
+        Button back = (Button)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.popBackStack();
+            }
+        });
     }
     class ListenerOnAdd implements View.OnClickListener{
         Fragment fragment;
