@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.fragment_container, fragment);
+            fragmentTransaction.addToBackStack("");
             fragmentTransaction.commit();
         }
     }
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.remove(fragment);
+            fragmentTransaction.addToBackStack("");
             fragmentTransaction.commit();
         }
     }
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.addToBackStack("");
             fragmentTransaction.commit();
         }
     }
